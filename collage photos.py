@@ -102,7 +102,7 @@ for _, fila in df.iterrows():
             escala = ALTO_IMAGEN / im.height
             nuevo_ancho = int(im.width * escala)
             nuevo_alto = ALTO_IMAGEN
-            im_redim = im.resize((nuevo_ancho, nuevo_alto), Image.LANCZOS)
+            im_redim = im.resize((nuevo_ancho, nuevo_alto), Image.Resampling.LANCZOS)
             # Si el ancho es menor que la mitad, centrar en fondo blanco
             fondo_temp = Image.new("RGB", (ANCHO_IMAGEN, ALTO_IMAGEN), "white")
             x_offset = (ANCHO_IMAGEN - nuevo_ancho) // 2

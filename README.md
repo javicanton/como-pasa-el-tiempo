@@ -18,11 +18,13 @@ Script en Python para mejorar la calidad de imágenes mediante upscaling y autoe
 ## Instalación
 
 1. Clona este repositorio:
+
 ```bash
 git clone [URL_DEL_REPOSITORIO]
 ```
 
 2. Instala las dependencias:
+
 ```bash
 pip install opencv-python Pillow
 ```
@@ -30,6 +32,7 @@ pip install opencv-python Pillow
 ## Uso
 
 1. Ejecuta el script:
+
 ```bash
 python enhancer.py
 ```
@@ -44,10 +47,12 @@ python enhancer.py
 ## Opciones de Mejora
 
 ### Upscale
+
 - Aumenta la resolución de las imágenes al doble
 - Usa interpolación bicúbica para mantener la calidad
 
 ### Autoenhance
+
 - Mejora el contraste (+20%)
 - Ajusta el brillo (+10%)
 - Aumenta la saturación (+10%)
