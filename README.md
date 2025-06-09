@@ -1,52 +1,74 @@
-# ¡Cómo pasa el tiempo!
+# Mejora de Imágenes
 
-Un script para crear collages comparativos de imágenes de antes y después. Ideal para ver la evolución de cualquier cosa: personas, objetos, proyectos, mascotas, plantas... ¡y sorprenderte con el paso del tiempo!
+Script en Python para mejorar la calidad de imágenes mediante upscaling y autoenhance.
 
-# Collage Fotos
+## Características
 
-Este script está pensado para que puedas crear collages comparativos de imágenes, es decir, juntar el "antes" y el "después" en una sola imagen de forma automática y elegante. Ideal para comparar cualquier cosa: personas, objetos, proyectos, etc.
-
-## ¿Qué hace este script?
-- Lee una lista desde un archivo CSV (con columnas: ID, Nombre, Apellido 1, Apellido 2 opcional).
-- Busca dos fotos por cada entrada (antes y después) en la carpeta `Fotos`.
-- Genera un collage para cada caso, colocando ambas fotos lado a lado, ajustando el alto al canvas (1920x1080 px).
-- Añade el nombre completo en la parte inferior, en un recuadro blanco con borde azul y esquinas redondeadas.
-- Guarda los collages en la carpeta `Output`.
+- Upscaling de imágenes (aumento de resolución)
+- Mejora automática de imágenes (contraste, brillo, saturación y nitidez)
+- Procesamiento por lotes de imágenes
+- Interfaz interactiva para elegir las mejoras deseadas
 
 ## Requisitos
-- Python 3.7 o superior
-- Paquetes: `pandas`, `Pillow`
-- Una fuente TrueType instalada (por ejemplo, Arial)
 
-Puedes instalar los requisitos con:
+- Python 3.x
+- OpenCV (cv2)
+- Pillow (PIL)
+
+## Instalación
+
+1. Clona este repositorio:
 ```bash
-pip install pandas pillow
+git clone [URL_DEL_REPOSITORIO]
 ```
 
-## Estructura de carpetas
+2. Instala las dependencias:
+```bash
+pip install opencv-python Pillow
+```
+
+## Uso
+
+1. Ejecuta el script:
+```bash
+python enhancer.py
+```
+
+2. Sigue las instrucciones en pantalla:
+   - Introduce la ruta de la carpeta con las imágenes
+   - Elige si quieres hacer upscale (y/n)
+   - Elige si quieres aplicar autoenhance (y/n)
+
+3. Las imágenes mejoradas se guardarán en la carpeta "Output"
+
+## Opciones de Mejora
+
+### Upscale
+- Aumenta la resolución de las imágenes al doble
+- Usa interpolación bicúbica para mantener la calidad
+
+### Autoenhance
+- Mejora el contraste (+20%)
+- Ajusta el brillo (+10%)
+- Aumenta la saturación (+10%)
+- Mejora la nitidez (+20%)
+
+## Estructura del Proyecto
+
 ```
 .
-├── Fotos/                # Aquí van las fotos (formato: ID_bf.jpg/png y ID_af.jpg/png)
-├── Output/               # Aquí se guardan los collages generados
-├── Lista.csv             # Lista de casos (se ignora en el repositorio)
-├── collage photos.py     # Script principal
+├── enhancer.py         # Script principal
+├── Output/             # Carpeta para imágenes procesadas
+└── README.md          # Este archivo
 ```
 
-## Formato del CSV
-El archivo debe tener al menos las siguientes columnas:
-- `ID` (identificador, por ejemplo: 001, 002...)
-- `Nombre`
-- `Apellido 1`
-- `Apellido 2` (opcional)
+## Notas
 
-## Ejecución
-Coloca las fotos y el CSV en las carpetas indicadas y ejecuta:
-```bash
-python collage photos.py
-```
-
-Los collages se guardarán en la carpeta `Output`.
+- Las imágenes originales no se modifican
+- Se procesan archivos .jpg, .jpeg y .png
+- Se pueden aplicar ambas mejoras o solo una
+- Las imágenes mejoradas se guardan en la carpeta "Output"
 
 ---
 
-**¡Cualquier sugerencia o mejora es bienvenida!** 
+**¡Cualquier sugerencia o mejora es bienvenida!**
