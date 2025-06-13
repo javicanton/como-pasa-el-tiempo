@@ -9,6 +9,14 @@ fotos_dir = os.path.join(base_dir, "Fotos")
 output_dir = os.path.join(base_dir, "Output")
 csv_path = os.path.join(base_dir, "Lista alumnos.csv")
 log_path = os.path.join(output_dir, "log_procesado.csv")
+
+# Verificación de archivos y directorios
+print("🔍 Verificando archivos y directorios...")
+print(f"Directorio actual: {os.getcwd()}")
+print(f"¿Existe directorio Fotos?: {os.path.exists(fotos_dir)}")
+print(f"¿Existe archivo CSV?: {os.path.exists(csv_path)}")
+print(f"Contenido del directorio actual: {os.listdir('.')}")
+
 os.makedirs(output_dir, exist_ok=True)
 
 print(f"📁 Directorio de fotos: {fotos_dir}")
